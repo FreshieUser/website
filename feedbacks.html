@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback and Suggestions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <ul class="navbar">
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      </ul>
+    <div class="container">
+        <h1>Feedback and Suggestions</h1>
+        <section id="provide-feedback">
+            <form id="feedback-form">
+                <label for="feedback">Your Feedback:</label>
+                <textarea id="feedback" name="feedback" rows="4" required></textarea>
+                
+                <label for="email">Your Name (optional):</label>
+                <input type="email" id="email" name="email">
+                
+                <button type="submit">Submit Feedback</button>
+            </form>
+            <div id="feedback-result"></div>
+        </section>
+
+        <section id="contact-information">
+            <h2>Contact Information for the Feedback Team</h2>
+            <p>If you have any questions or need further assistance, please contact our feedback team:</p>
+            <ul>
+                <li>Phone: <br>
+                    Globe: 09670040486 <br>
+                    SMART: 09635422626<br>
+                </li>
+                <li>Quezon Ave.,Pob.5,Midsayap, Cotabato</li>
+            </ul>
+        </section>
+    </div>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1, h2 {
+    color: #333;
+}
+
+p {
+    color: #666;
+}
+
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+textarea {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    resize: vertical;
+}
+
+input[type="email"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+}
+
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#feedback-result {
+    margin-top: 20px;
+    padding: 10px;
+    background: #e9ecef;
+    border: 1px solid #ddd;
+    display: none;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background: #f9f9f9;
+    margin: 5px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+</style>
+    <script>
+document.getElementById('feedback-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    var feedback = document.getElementById('feedback').value;
+    var email = document.getElementById('email').value;
+    var feedbackResult = document.getElementById('feedback-result');
+    
+    if(feedback === "") {
+        feedbackResult.style.display = "none";
+        alert("Please enter your feedback.");
+        return;
+    }
+    
+    // Simulate sending feedback to the server
+    // In a real application, you would send this data to your server here
+    var dummyResponse = "Thank you for your feedback!";
+    
+    feedbackResult.innerHTML = dummyResponse;
+    feedbackResult.style.display = "block";
+    
+    // Clear the form
+    document.getElementById('feedback-form').reset();
+});
+
+    </script>
+</body>
+</html>

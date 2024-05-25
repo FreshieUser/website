@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Personal Information Form</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<ul class="navbar">
+    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+    </ul>
+</head>
+<body>
+  <div class="container">
+    <h1>Update Personal Information</h1>
+    
+    <form id="userForm">
+      <label for="firstName">First Name:</label>
+      <input type="text" id="firstName" name="firstName" required>
+
+      <label for="lastName">Last Name:</label>
+      <input type="text" id="lastName" name="lastName" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" required>
+
+      <label for="address">Address:</label>
+      <input type="address" id="address" name="address" required>
+
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" name="dob" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+
+      <button type="submit">Update</button>
+    </form>
+    <div id="result"></div>
+  </div>
+<style>
+  body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin: 10px 0 5px;
+  color: #333;
+}
+
+input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+#result {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #e9ecef;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  display: none;
+}
+
+</style>
+
+
+  <script>
+document.getElementById('userForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const firstName = document.getElementById('firstName').value;
+  const lastName = document.getElementById('lastName').value;
+  const email = document.getElementById('email').value;
+  const phone = document.getElementById('phone').value;
+  const address = document.getElementById('address').value;
+  const dob = document.getElementById('dob').value;
+  const password = document.getElementById('password').value;
+
+  const resultDiv = document.getElementById('result');
+  resultDiv.style.display = 'block';
+  resultDiv.innerHTML = `
+    <h2>User Information</h2>
+    <p><strong>First Name:</strong> ${firstName}</p>
+    <p><strong>Last Name:</strong> ${lastName}</p>
+    <p><strong>Email:</strong> ${email}</p>
+    <p><strong>Phone Number:</strong> ${phone}</p>
+    <p><strong>Address:</strong> ${address}</p>
+    <p><strong>Date of Birth:</strong> ${dob}</p>
+    <p><strong>Password:</strong> ${password}</p>
+  `;
+});
+
+  </script>
+</body>
+</html>

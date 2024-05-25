@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile - Macsims Pizza</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: burlywood;
+    margin: 0;
+    padding: 0;
+  }
+  .profile-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .profile-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .product {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .quantity-input {
+    width: 50px;
+    text-align: center;
+  }
+  .cart-items {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  .cart-item {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  .cart-item .item-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .total-container {
+    text-align: right;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .add-to-cart-button,
+  .payment-button {
+    background-color: #008CBA;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+  .delete-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+</style>
+</head>
+<body>
+  <div class="profile-container">
+    <div class="profile-header">
+      <h2>User Profile</h2>
+    </div>
+    <div class="product">
+      <span>All Cheese</span>
+      <span>Price: Regular ₱319.00</span>
+      <input type="number" id="quantity-AllCheese" class="quantity-input" value="0" min="0">
+      <button class="add-to-cart-button" onclick="addToCart('All Cheese', 319.00, 'quantity-AllCheese')">Add to Cart</button>
+    </div>
+    <div class="product">
+      <span>All Meat</span>
+      <span>Price: Regular ₱369.00</span>
+      <input type="number" id="quantity-AllMeat" class="quantity-input" value="0" min="0">
+      <button class="add-to-cart-button" onclick="addToCart('All Meat', 369.00, 'quantity-AllMeat')">Add to Cart</button>
+    </div>
+    <div class="product">
+      <span>Beef Bacon</span>
+      <span>Price: Regular ₱369.00</span>
+      <input type="number" id="quantity-BeefBacon" class="quantity-input" value="0" min="0">
+      <button class="add-to-cart-button" onclick="addToCart('Beef Bacon', 369.00, 'quantity-BeefBacon')">Add to Cart</button>
+    </div>
+    <div class="product">
+      <span>Beef Hawaiian</span>
+      <span>Price: Regular ₱369.00</span>
+      <input type="number" id="quantity-BeefHawaiian" class="quantity-input" value="0" min="0">
+      <button class="add-to-cart-button" onclick="addToCart('Beef Hawaiian', 369.00, 'quantity-BeefHawaiian')">Add to Cart</button>
+    </div>
+    <div class="product">
+      <span>Duos</span>
+      <span>Price: Regular ₱319.00</span>
+      <input type="number" id="quantity-Duos" class="quantity-input" value="0" min="0">
+      <button class="add-to-cart-button" onclick="addToCart('Duos', 319.00, 'quantity-Duos')">Add to Cart</button>
+    </div>
+    <div class="product">
+      <span>Ham and Cheese</span>
+      <span>Price: Regular ₱319.00</span>
+      <input type="number" id="quantity-HamAndCheese" class="quantity-input" value="0" min="0">
+      <button class="add-to-cart-button" onclick="addToCart('Ham and Cheese', 319.00, 'quantity-HamAndCheese')">Add to Cart</button>
+    </div>
+    <div class="product">
+      <span>Macsim's Combo</span>
+      <span>Price: Regular ₱419.00</span>
+      <input type="number" id="quantity-MacsimsCombo" class="quantity-input" value="0" min="0">
+      <button class="add-to-cart-button" onclick="addToCart('Macsim\'s Combo', 419.00, 'quantity-MacsimsCombo')">Add to Cart</button>
+    </div>
+    <div class="product">
+      <span>Pepperoni</span>
+      <span>Price: Regular ₱369.00</span>
+      <input type="number" id="quantity-Pepperoni" class="quantity-input" value="0" min="0">
+      <button class="add-to-cart-button" onclick="addToCart('Pepperoni', 369.00, 'quantity-Pepperoni')">Add to Cart</button>
+    </div>
+    <div class="product">
+      <span>Sana All</span>
+      <span>Price: Regular ₱369.00</span>
+      <input type="number" id="quantity-SanaAll" class="quantity-input" value="0" min="0">
+      <button class="add-to-cart-button" onclick="addToCart('Sana All', 369.00, 'quantity-SanaAll')">Add to Cart</button>
+    </div>
+    <h3>My Cart</h3>
+    <ul id="cartItems" class="cart-items"></ul>
+    <div class="total-container" id="totalContainer">Total: ₱0</div>
+    <div class="payment-method">
+      <button class="payment-button" onclick="makePayment()">Pay Now</button>
+      <button class="payment-button" onclick="placeOrder()">Place Order</button>
+      <button class="payment-button" onclick="window.location.href='index.html'">Back to Home</button>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+      displayCartItems(cartItems);
+    });
+
+    function addToCart(productName, price, quantityId) {
+      const quantity = parseInt(document.getElementById(quantityId).value);
+      if (quantity <= 0) {
+        alert('Please enter a quantity greater than 0.');
+        return;
+      }
+
+      const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+      const existingItem = cartItems.find(item => item.name === productName);
+
+      if (existingItem) {
+        existingItem.quantity += quantity;
+      } else {
+        cartItems.push({ name: productName, price: price, quantity: quantity });
+      }
+
+      localStorage.setItem('cart', JSON.stringify(cartItems));
+      displayCartItems(cartItems);
+    }
+
+    function removeItem(itemName) {
+      let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+      cartItems = cartItems.filter(item => item.name !== itemName);
+      localStorage.setItem('cart', JSON.stringify(cartItems));
+      displayCartItems(cartItems);
+    }
+
+    function displayCartItems(cartItems) {
+      const cartItemsList = document.getElementById('cartItems');
+      cartItemsList.innerHTML = '';
+
+      let total = 0;
+
+      cartItems.forEach(item => {
+        const listItem = document.createElement('li');
+        listItem.classList.add('cart-item');
+
+        const itemDetails = document.createElement('div');
+        itemDetails.classList.add('item-details');
+        itemDetails.innerHTML = `
+          <span>${item.name}</span>
+          <span>Price: ₱${item.price}</span>
+          <span>Quantity: ${item.quantity}</span>
+          <span>Total: ₱${item.price * item.quantity}</span>
+        `;
+
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Cancel';
+        deleteButton.classList.add('delete-button');
+        deleteButton.addEventListener('click', () => removeItem(item.name));
+
+        itemDetails.appendChild(deleteButton);
+        listItem.appendChild(itemDetails);
+        cartItemsList.appendChild(listItem);
+
+        total += item.price * item.quantity;
+      });
+
+      document.getElementById('totalContainer').textContent = `Total: ₱${total}`;
+    }
+
+    function makePayment() {
+      alert('Payment method selected. Proceeding to payment...');
+      // Add your payment processing logic here
+    }
+
+    function placeOrder() {
+      alert('Your Order is already placed');
+      // Add your order placement logic here
+    }
+  </script>
+</body>
+</html>

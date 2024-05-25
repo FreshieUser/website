@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <title>Home</title>
+</head>
+<body>
+  <!-- Menu -->
+  <section class="menu" id="menu">
+    <div class="heading">
+      <span>Menu</span>
+      <h2>Tasty menu of the week</h2>
+    </div>
+    <ul class="navbar">
+      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="profile.html"><i class="fas fa-user"></i> Profile</a></li>
+    </ul>
+    <div class="search-bar">
+      <input type="text" id="search" name="search" placeholder="Search...">
+      <button onclick="search()">Search</button>
+    </div> <!-- Closing div for .search-bar -->
+    <div class="menu-container">
+      <!-- Box 1 -->
+      <div class="box">
+        <div class="box-img">
+          <img src="All Cheese.jpg" alt="All Cheese">
+        </div>
+        <h2>All Cheese</h2>
+        <span>Regular ₱319.00</span>
+      </div>
+      <!-- Box 2 -->
+      <div class="box">
+        <div class="box-img">
+          <img src="All meat.jpg" alt="All Meat">
+        </div>
+        <h2>All Meat</h2>
+        <span>Regular ₱369.00</span>
+      </div>
+      <!-- Box 3 -->
+      <div class="box">
+        <div class="box-img">
+          <img src="Beef Bacon.jpg" alt="Beef Bacon">
+        </div>
+        <h2>Beef Bacon</h2>
+        <span>Regular ₱369.00</span>
+      </div>
+      <!-- Box 4 -->
+      <div class="box">
+        <div class="box-img">
+          <img src="Beef Hawaiian.jpg" alt="Beef Hawaiian">
+        </div>
+        <h2>Beef Hawaiian</h2>
+        <span>Overload ₱369.00</span>
+      </div>
+      <!-- Box 5 -->
+      <div class="box">
+        <div class="box-img">
+          <img src="Duos.jpg" alt="Duos">
+        </div>
+        <h2>Duos</h2>
+        <span>Regular ₱319.00</span>
+      </div>
+      <!-- Box 6 -->
+      <div class="box">
+        <div class="box-img">
+          <img src="Ham and Cheese.jpg" alt="Ham and Cheese">
+        </div>
+        <h2>Ham and Cheese</h2>
+        <span>Regular ₱319.00</span>
+      </div>
+      <!-- Box 7 -->
+      <div class="box">
+        <div class="box-img">
+          <img src="Macsims Combo.jpg" alt="Macsim's Combo">
+        </div>
+        <h2>Macsim's Combo</h2>
+        <span>Regular ₱419.00</span>
+      </div>
+      <!-- Box 8 -->
+      <div class="box">
+        <div class="box-img">
+          <img src="Pepperoni.jpg" alt="Pepperoni">
+        </div>
+        <h2>Pepperoni</h2>
+        <span>Regular ₱369.00</span>
+      </div>
+      <!-- Box 9 -->
+      <div class="box">
+        <div class="box-img">
+          <img src="Sana All.jpg" alt="Sana All">
+        </div>
+        <h2>Sana All</h2>
+        <span>Regular ₱369.00</span>
+      </div>
+    </div>
+  </section>
+  <button class="start-order-button" onclick="window.location.href='home.html'">Tap to Start Ordering</button>
+
+  <script>
+    function search() {
+      // Implement your search functionality here
+      alert('Search function is not implemented yet.');
+    }
+  </script>
+</body>
+</html>

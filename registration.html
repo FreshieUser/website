@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CREATE NEW ACCOUNT</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("5.png");
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: orange;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 300px;
+            opacity: 0.9;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            color: black;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 10px;
+            color: black;
+        }
+
+        h2 {
+            text-align: center;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Create Account</h2>
+        <form action="products.html" method="post">
+            <div class="form-group">
+                <label for="firstname">First Name</label>
+                <input type="text" id="firstname" name="firstname" required>
+            </div>
+            <div class="form-group">
+                <label for="lastname">Last Name</label>
+                <input type="text" id="lastname" name="lastname" required>
+            </div>
+            <div class="form-group">
+                <label for="middlename">Middle Name</label>
+                <input type="text" id="middlename" name="middlename" required>
+            </div>
+            <div class="form-group">
+                <label for="contactnumber">Phone Number</label>
+                <input type="text" id="contactnumber" name="contactnumber" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create Account">
+            </div>
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const form = document.querySelector('form');
+                    form.addEventListener('submit', (e) => {
+                        alert('Registered Successfully!');
+                    });
+                });
+            </script>
+        </form>
+        <div class="login-link">
+            Already have an account? <a href="login.html">Log In</a>
+        </div>
+    </div>
+</body>
+</html>
